@@ -37,7 +37,6 @@ func InitRouter() *gin.Engine {
 	R.Static("/resource", "./resource")
 	//a.3.业务后台
 	R.Static("/webadmin", "./resource/webadmin")
-	R.Static("/webbusiness", "./resource/webbusiness")
 	R.LoadHTMLFiles("./resource/developer/template/install.html", "./resource/developer/template/isinstall.html")
 	//访问域名根目录重定向
 	R.GET("/", func(c *gin.Context) {
