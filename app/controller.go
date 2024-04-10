@@ -9,6 +9,7 @@ package controller
  */
 import (
 	_ "gofly/app/admin"
+	_ "gofly/app/baitaner"
 	_ "gofly/app/common"
 	_ "gofly/app/wxapp"
 	_ "gofly/app/wxoffi"
