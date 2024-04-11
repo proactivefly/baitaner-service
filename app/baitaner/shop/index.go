@@ -1,9 +1,9 @@
 package shop
 
 import (
-	"gofly/app/model"
+	"gofly/model"
 	"gofly/route/middleware"
-	"gofly/utils"
+	"gofly/utils/gf"
 	"gofly/utils/results"
 	"reflect"
 	"strconv"
@@ -16,7 +16,7 @@ import (
 *本路径为： /admin/user/login -省去了index
  */
 func init() {
-    utils.Register(&Index{}, reflect.TypeOf(Index{}).PkgPath())
+    gf.Register(&Index{}, reflect.TypeOf(Index{}).PkgPath())
 }
 
 type Index struct {

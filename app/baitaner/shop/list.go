@@ -1,14 +1,14 @@
 package shop
 
 import (
-	"gofly/utils"
+	"gofly/utils/gf"
 	"net/http"
 	"reflect"
 
 	"github.com/gin-gonic/gin"
 )
 func init() {
-	utils.Register(&Shop{}, reflect.TypeOf(Shop{}).PkgPath())
+	gf.Register(&Shop{}, reflect.TypeOf(Shop{}).PkgPath())
 }
 type Shop struct {
 }

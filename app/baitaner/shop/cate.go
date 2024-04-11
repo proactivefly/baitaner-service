@@ -2,9 +2,9 @@ package shop
 
 import (
 	"encoding/json"
-	"gofly/app/model"
+	"gofly/model"
 	"gofly/route/middleware"
-	"gofly/utils"
+	"gofly/utils/gf"
 	"gofly/utils/results"
 	"io"
 	"reflect"
@@ -20,7 +20,7 @@ type Cate struct {
 
 func init() {
     fpath := Cate{}
-    utils.Register(&fpath, reflect.TypeOf(fpath).PkgPath())
+    gf.Register(&fpath, reflect.TypeOf(fpath).PkgPath())
 }
 
 // 文章分类列表
