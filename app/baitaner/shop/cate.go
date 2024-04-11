@@ -5,13 +5,13 @@ import (
 	"gofly/model"
 	"gofly/route/middleware"
 	"gofly/utils/gf"
+	"gofly/utils/gform"
 	"gofly/utils/results"
 	"io"
 	"reflect"
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/gohouse/gorose/v2"
 )
 
 // 类名
@@ -27,7 +27,7 @@ func init() {
 func (api *Cate) Get_list(c *gin.Context) {
     list, _ := model.DB().Table("business_store_cate").Where("type", 0).Fields("id,pid,name").Order("id asc").Get()
     if list == nil {
-        list = make([]gorose.Data, 0)
+        list = make([]gform.Data, 0)
     }
     results.Success(c, "文章分类列表", list, nil)
 }
