@@ -22,7 +22,7 @@ func init() {
 type Index struct {
 }
 
-// 文章
+// 获取商店列表
 func (api *Index) Get_list(c *gin.Context) {
     getuser, _ := c.Get("user")
     user := getuser.(*middleware.UserClaims)
@@ -32,7 +32,7 @@ func (api *Index) Get_list(c *gin.Context) {
     _pageSize := c.DefaultQuery("pageSize", "10")
     pageNo, _ := strconv.Atoi(page)
     pageSize, _ := strconv.Atoi(_pageSize)
-    MDB := model.DB().Table("business_store_article").Fields("id,cid,name,image,des,weigh,status,visit,star,createtime").
+    MDB := model.DB().Table("shop").Fields("id,cid,name,image,des,weigh,status,visit,star,createtime").
         Where("businessID", user.BusinessID)
     if cid != "0" {
         MDB.Where("cid", cid)
@@ -57,9 +57,8 @@ func (api *Index) Get_list(c *gin.Context) {
             "items":    list}, nil)
     }
 }
-/****************新增方法*****************/
 // 获取内容
-func (api *Index) Get_content(c *gin.Context) {
+func (api *Index) Get_detail(c *gin.Context) {
     id := c.DefaultQuery("id", "")
     if id == "" {
         results.Failed(c, "请传参数id", nil)

@@ -5,7 +5,6 @@ import (
 	//这里路由-由构架是添加-开发者仅在指定工程目录下controller.go文件添加宝即可
 
 	// _ "gofly/app/admin"
-	// _ "gofly/app/business"
 	// _ "gofly/app/wxoffi"
 	// _ "gofly/app/common"
 	// _ "gofly/app/wxapp"

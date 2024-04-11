@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
-    admin管理后台
+    <h1>admin管理后台</h1>
+    <script>
+        $.ajax({
+            url:"/baitaner/shop/get_list",
+            type:"get",
+            dataType:"json",
+            success:function(res){
+                console.log(res)
+            },
+            data:{
+                name:"罗永浩",
+                age:88,
+                sex:'男'
+            }
+        })
+    </script>
 </body>
 </html>

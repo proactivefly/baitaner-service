@@ -35,7 +35,9 @@ func ValidityAPi() gin.HandlerFunc {
 		} else {
 			NoVerifyAPI_arr = make([]string, 0)
 		}
+
 		rootPath := strings.Split(c.Request.URL.Path, "/")
+		//  下标1 的时候前边有个空格
 		if (len(rootPath) > 2 && IsContain(NoVerifyAPIRoot_arr, rootPath[1])) || IsContain(NoVerifyAPI_arr, c.Request.URL.Path) || strings.Contains(c.Request.URL.Path, "/common/uploadfile/get_image") { //过滤附件访问接口
 			c.Next() //不需验证
 		} else { //需要验证

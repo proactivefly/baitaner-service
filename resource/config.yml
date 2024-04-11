@@ -38,15 +38,30 @@ app:
      #配置企业私有仓网址
      companyPrivateHouse: 
      # 配置根域名访问重定向路径,默认是业务端后台
-     rootview: webbusiness
+     rootview: webadmin
      #不需要token-根模块
-     noVerifyTokenRoot: resource,webbusiness,webadmin,wxapp
+     noVerifyTokenRoot: resource,webadmin,wxapp,baitaner
      #不需要api接口合法性验证-根模块md5加密
-     noVerifyAPIRoot: resource,webbusiness,webadmin
+     noVerifyAPIRoot: resource,webadmin,baitaner
      #不需要验证token-具体请求路径
-     noVerifyToken: /common/uploadfile/get_image,/common/install/index,/common/install/save,/admin/user/login,/admin/user/logout,/admin/user/refreshtoken,/admin/user/get_code,/admin/user/resetPassword,/business/user/login,/business/user/logout,/business/user/refreshtoken,/business/user/get_code,/business/user/resetPassword,/wxoffi/service/getPost_api,/wxapp/user/get_openid,/admin/user/get_logininfo,/business/user/get_logininfo
+     noVerifyToken: 
+          /common/uploadfile/get_image,
+          /common/install/index,
+          /common/install/save,
+          /admin/user/login,
+          /admin/user/logout,
+          /admin/user/refreshtoken,
+          /admin/user/get_code,
+          /admin/user/resetPassword,
+          /wxoffi/service/getPost_api,
+          /wxapp/user/get_openid,
+          /admin/user/get_logininfo,
+          /baitaner/shop/get_shoplist
      #不需要接口合法性-具体请求路径
-     noVerifyAPI: /wxoffi/service/getPost_api,/common/install/index,/common/install/save,
+     noVerifyAPI: 
+          /wxoffi/service/getPost_api,
+          /common/install/index,
+          /common/install/save,
 log:
      level: info  # 日志等级debug
      root_dir: ./runtime/logs # 日志根目录
