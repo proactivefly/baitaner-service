@@ -86,6 +86,7 @@ func JwtVerify(c *gin.Context) {
 		NoVerifyToken_arr = make([]string, 0)
 	}
 	rootPath := strings.Split(c.Request.URL.Path, "/")
+
 	if len(rootPath) > 2 && IsContain(NoVerifyTokenRoot_arr, rootPath[1]) { //不需要token验证-根路径
 		return
 	} else if IsContain(NoVerifyToken_arr, c.Request.URL.Path) { //不需要token验证-具体路径
