@@ -25,15 +25,15 @@ app:
      port: 8108
      #接口合法性验证
      apisecret: gofly@888
-     #接口JWT验证、跨域域名-不添加请求时报403 (开发、部署必改),部署域名时：“https://en.goflys.cn”替换成您的域名
-     allowurl: http://localhost:9420,http://localhost:9421,https://en.goflys.cn,http://localhost:6020
+     #接口JWT验证、跨域域名-不添加请求时报403 (开发、部署必改),部署域名时：“https://xxx.xxx.cn”替换成您的域名
+     allowurl: http://localhost:9420,http://localhost:9421,https://xxx.xxx.cn,http://localhost:6020
      #token超时时间单位分钟 
      tokenouttime: 10 
      #调用cpu个数
      cpunum: 3
      # Gin 框架在运行的时候默认是debug模式 有： 开发：debug，生产：release，测试模式：test
      runlogtype: debug
-     # 配置代码生成时-前端代码根目录位置(开发必改)
+     # 配置代码生成时-前端代码根目录位置(开发必改) ，目前没用
      vueobjroot: D:/Project/develop/vue/gofly_enterprise/business
      #配置企业私有仓网址
      companyPrivateHouse: 
@@ -44,7 +44,7 @@ app:
      #不需要api接口合法性验证-根模块md5加密
      noVerifyAPIRoot: resource,webadmin,baitaner
      #不需要验证token-具体请求路径
-     noVerifyToken: /common/uploadfile/get_image,/common/install/index,/common/install/save,/admin/user/login,/admin/user/logout,/admin/user/refreshtoken,/admin/user/get_code,/admin/user/resetPassword,/wxoffi/service/getPost_api,/wxapp/user/get_openid,/admin/user/get_logininfo
+     noVerifyToken: /common/uploadfile/get_image,/common/install/index,/common/install/save,/admin/user/login,/admin/user/logout,/admin/user/refreshtoken,/admin/user/get_code,/admin/user/resetPassword,/wxoffi/service/getPost_api,/wxapp/user/get_openid,/admin/user/get_logininfo,/baitaner/stall/get_list
      #不需要接口合法性-具体请求路径
      noVerifyAPI: /wxoffi/service/getPost_api,/common/install/index,/common/install/save,
 log:

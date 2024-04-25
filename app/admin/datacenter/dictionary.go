@@ -61,6 +61,27 @@ func (api *Dictionary) Get_list(c *gin.Context) {
 	}
 }
 
+// GetListAll 获取列表
+func (api *Dictionary) GetListAll(c *gin.Context) {
+	tablename := c.DefaultQuery("tablename", "")
+	MDB := model.DB().Table(tablename).Fields("id", "keyname label", "keyvalue value", "createtime", "des")
+	status := c.DefaultQuery("status", "0")
+	if status != "" {
+		MDB.Where("status", status)
+	}
+	list, err := MDB.Order("id asc").Get()
+	if err != nil {
+		results.Failed(c, err.Error(), nil)
+	} else {
+		var totalCount int64
+		totalCount, _ = MDB.Count("*")
+		results.Success(c, "获取全部列表", map[string]interface{}{
+			"total": totalCount,
+			"items": list,
+		}, nil)
+	}
+}
+
 // 保存
 func (api *Dictionary) Save(c *gin.Context) {
 	body, _ := io.ReadAll(c.Request.Body)

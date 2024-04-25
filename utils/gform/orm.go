@@ -1,8 +1,9 @@
 package gform
 
 import (
-	"github.com/gohouse/t"
 	"strings"
+
+	"github.com/gohouse/t"
 )
 
 // Orm ...
@@ -103,7 +104,6 @@ func (dba *Orm) AddFields(fields ...string) IOrm {
 // Distinct : select distinct
 func (dba *Orm) Distinct() IOrm {
 	dba.distinct = true
-
 	return dba
 }
 

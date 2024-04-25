@@ -20,7 +20,7 @@ func StringTimestamp(timeLayout string, timetype string) int64 {
 
 // 时间戳格式化为日期字符串
 // timetype时间格式类型 date=日期 datetime=日期时间 datesecond=日期时间秒
-func TimestampString(timedata interface{}, timetype string) string {
+func TimestampString(timedata interface{}, timetype string) interface{} {
 	timetpl := "2006-01-02 15:04:05"
 	if timetype == "date" {
 		timetpl = "2006-01-02"

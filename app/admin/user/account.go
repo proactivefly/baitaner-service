@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/json"
+	"fmt"
 	"gofly/model"
 	"gofly/route/middleware"
 	"gofly/utils/gf"
@@ -44,6 +45,7 @@ func (api *Account) Get_menu(c *gin.Context) {
 	if role_id == nil {
 		results.Failed(c, "您没有使用权限", nil)
 	}
+	fmt.Println("roleId,", role_id)
 	menu_ids, rerr := model.DB().Table("admin_auth_role").WhereIn("id", role_id.([]interface{})).Pluck("rules")
 	if rerr != nil {
 		results.Failed(c, "查找auth_role败！", rerr)
@@ -61,8 +63,9 @@ func (api *Account) Get_menu(c *gin.Context) {
 	if ruleerr != nil {
 		results.Failed(c, "获取菜单错误", ruleerr)
 	}
+
 	rulemenu := GetMenuArray(nemu_list, 0, roles)
-	results.Success(c, " 获取菜单", rulemenu, nil)
+	results.Success(c, "获取菜单", rulemenu, nil)
 }
 
 // 保存数据
