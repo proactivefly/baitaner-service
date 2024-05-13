@@ -76,15 +76,17 @@ func (api *Role) Get_parent(c *gin.Context) {
 
 // 表单获取菜单
 func (api *Role) Get_menuList(c *gin.Context) {
-	id := c.DefaultQuery("id", "0")
-	pid := c.DefaultQuery("pid", "0")
+	id := c.DefaultQuery("id", "0")   //角色id 1
+	pid := c.DefaultQuery("pid", "0") //父级pid 0
 	MDB := model.DB().Table("admin_auth_rule").Where("status", 0)
+	// 打印id .pid
 	if id == "0" || pid == "0" { //获取本账号所拥有的权限
 		//账号信息
 		getuser, _ := c.Get("user") //当前用户
 		user := getuser.(*middleware.UserClaims)
 		role_id, _ := model.DB().Table("admin_auth_role_access").Where("uid", user.ID).Pluck("role_id")
 		menu_id, _ := model.DB().Table("admin_auth_role").WhereIn("id", role_id.([]interface{})).Pluck("rules")
+		fmt.Println(menu_id, role_id, "看看啥来着")
 		if !IsContain(menu_id.([]interface{}), "*") { //不是超级权限-过滤菜单权限
 			getmenus := ArraymoreMerge(menu_id.([]interface{}))
 			MDB = MDB.WhereIn("id", getmenus)

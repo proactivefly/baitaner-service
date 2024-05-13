@@ -1,6 +1,6 @@
 package config
 
-//数据数据库配置
+// 数据数据库配置
 type DBconf struct {
 	Driver   string `yaml:"driver"`
 	Hostname string `yaml:"hostname"`
@@ -11,7 +11,7 @@ type DBconf struct {
 	Prefix   string `yaml:"prefix"`
 }
 
-//应用配置
+// 应用配置
 type App struct {
 	Port                string `yaml:"port"`
 	Version             string `yaml:"version"`
@@ -31,13 +31,13 @@ type App struct {
 	NoVerifyAPI         string `yaml:"noVerifyAPI"`
 }
 
-//JWT验证
+// JWT验证
 type Jwt struct {
 	Secret string `mapstructure:"secret" json:"secret" yaml:"secret"`
 	JwtTtl int64  `mapstructure:"jwt_ttl" json:"jwt_ttl" yaml:"jwt_ttl"` // token 有效期（秒）
 }
 
-//日志文件
+// 日志文件
 type Log struct {
 	Level      string `mapstructure:"level" json:"level" yaml:"level"`
 	RootDir    string `mapstructure:"root_dir" json:"root_dir" yaml:"root_dir"`
@@ -48,4 +48,9 @@ type Log struct {
 	MaxSize    int    `mapstructure:"max_size" json:"max_size" yaml:"max_size"` // MB
 	MaxAge     int    `mapstructure:"max_age" json:"max_age" yaml:"max_age"`    // day
 	Compress   bool   `mapstructure:"compress" json:"compress" yaml:"compress"`
+}
+type wxConf struct {
+	AppID     string `yaml:"appid"`
+	AppSecret string `yaml:"appSecret"`
+	AuthURL   string `yaml:"authURL"`
 }

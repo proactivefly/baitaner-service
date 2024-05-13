@@ -24,7 +24,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// 路由初始化
+// InitRouter 路由初始化
 func InitRouter() *gin.Engine {
 	//初始化路由
 	R := gin.Default()
@@ -46,15 +46,15 @@ func InitRouter() *gin.Engine {
 	// 为 multipart forms 设置较低的内存限制 (默认是 32 MiB)
 	R.MaxMultipartMemory = 8 << 20 // 8 MiB
 	//0.跨域访问-注意跨域要放在gin.Default下
-	var str_arr []string
+	var strArr []string
 	if global.App.Config.App.Allowurl != "" {
-		str_arr = strings.Split(global.App.Config.App.Allowurl, `,`)
+		strArr = strings.Split(global.App.Config.App.Allowurl, `,`)
 	} else {
-		str_arr = []string{"http://localhost:8080"}
+		strArr = []string{"http://localhost:8080"}
 	}
 
 	R.Use(cors.New(cors.Config{
-		AllowOrigins: str_arr,
+		AllowOrigins: strArr,
 		// AllowOriginFunc:  func(origin string) bool { return true },
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"},
 		AllowHeaders:     []string{"X-Requested-With", "Content-Type", "Authorization", "Businessid", "verify-encrypt", "ignoreCancelToken", "verify-time"},

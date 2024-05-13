@@ -1,18 +1,5 @@
 # GoFly快速开发后台管理系统介绍
 
-## 一、框架介绍
-
-框架采用前后端分离，将Go与Vue结合开发中后台系统，Go作为一种高效、安全的编程语言，可以帮助开发者快速构建高效、可靠、安全的应用，Vue作为前端优秀框架，可以快速搭建漂亮，高体验，稳定前端页面。能让开发者开发时顺手，客户使用时满意，性能与颜值并存，让开每一个项目交付都能让您和您的客户双方都满意。Go 开发业务接口，vue 开发前端界面。后台管理系统从业务上分为：
-总管理系统（admin 端简称 A 端）和业务端管理系统（专门编写业务的，方便系统做出 saas 形系统，
-减少后期需要多个应用重构成本，遇到买系统时不要单独重新部署直接再 A 端开一个账号就可以，
-业务端 business 简称 B 端）。天生自带SAAS多账号数据分离，可以做到不用重新部署，即可单独拉出新的一套。
-
-GoFly快速开发框架来自我们的医疗项目，从2019年开始用于医疗系统开发，医疗项目已经运行多年，框架的安全性、并发性能、稳定性已经得到验证。特别是在疫情期间的疫苗预约接种留观等并发和反应速度都表现良好,你可放心使用于你的项目中去。
-
-框架采用前后端分离，Go开发使用热编译，开发目录不建议太多文件，影响编译扫描效率，前段建议放在另外位置，
-git上传了全部的Go源码，前端代码和数据库请到[GoFly社区下载](https://goflys.cn/prdetail?id=6)，使用时有问题请加技术客服咨询，我们社区的初心是为不让开发者为难，打造一个让大家都舒服的社区，与大家共建一个伟大的社区。
-
-如果框架能帮助到你，无需捐赠，就给GoFly作者们点个⭐️star吧！让更多人使用，开发者们都找到好工作或快速开发自己项目，企业可以降本增效。
 
 ## 二、优势简介
 
@@ -83,35 +70,7 @@ git上传了全部的Go源码，前端代码和数据库请到[GoFly社区下载
 
  [5.B端在线预览](https://sg.goflys.cn/webbusiness)
 
-## 六、效果图片预览
 
-1.登录
-![登录](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230507/f7c95d545b8c6b2efcdc67411717dff9.png?_t=1690908276)
-2.统计页
-![统计页](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230808/b8304ca001cda4a94b86dad216ca5219.png?_t=1691428085)
-3.角色管理-auth权限
-![ 角色管理-auth权限](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/c4de74ba182c5037a4fd0390fb7a6ecf.png?_t=1690908276)
-4.数据中心-数据字典
-![数据中心-数据字典](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/f894c904f617b32a8da0bb5310ed95e0.png?_t=1690908276?_t=1690908444?_t=1690908471?_t=1690908494?_t=1690908849?_t=1691152158)
-5. 数据中心-附件管理
-![附件管理列表](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/c54d9d9141bad3aaa5a4923e7abcc32e.png?_t=1690908276?_t=1690908444?_t=1690908471?_t=1690908494?_t=1690908849?_t=1691152158)
-![附件管理器](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/23ec93d6787bfcbca2e6c930213671bd.png?_t=1690908276?_t=1690908444?_t=1690908471?_t=1690908494?_t=1690908849?_t=1691152158)
-6.数据中心-配置
-![配置](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/fba8e679546d1f3fe450b94e7f239a51.png?_t=1690908276?_t=1690908444?_t=1690908471?_t=1690908494?_t=1690908849?_t=1691152158)
-7.微信业务
-![微信菜单](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/79770e6d1fb7e4155c67f6637a4a33df.png?_t=1690908276?_t=1690908444?_t=1690908471?_t=1690908494?_t=1690908849?_t=1691152158)
-8.api接口管理
-![api接口管理列表及测试接口](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/10132ac752b08efd8b2b2c56c6492775.png?_t=1690908276?_t=1690908444?_t=1690908471?_t=1690908494?_t=1690908849?_t=1691152158)
-![api接口管理添加接口](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/595c0301371762910ea3c20c1ce737ca.png?_t=1690908276?_t=1690908444?_t=1690908471?_t=1690908494?_t=1690908849?_t=1691152158)
-9.1 代码一键生成后端CRUD和前端代码
-![代码一键生成后端CRUD和前端代码列表](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230808/0708c3ad360324d3af90ebebbf47db67.png?_t=1691428879)
-![代码一键生成后端CRUD和前端代码添加](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20240108/6425dacd4222bc81fc481fd906b49eb3.png)
-9.12 代码生成示例
-![生成列表](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230808/23d844127703ba85731097a305571b89.png?_t=1691428879)
-![生成添加表单](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/2622a5071f8f512e8f0a31e23990da3c.png)
-![生成添加表单-文本编辑器](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20230802/85c36eef5e37779858f2e912885f71c5.png?_t=1690908444?_t=1690908471?_t=1690908494?_t=1690908849?_t=1691152158?_t=1691428879)
-10.简洁大方文本剪辑器
-![文本剪辑器](https://api.goflys.cn/common/uploadfile/get_image?url=resource/uploads/20240219/f9d6376f4ed31719be29838db64542ec.png)
 
 ## 七、安装及部署打包说明
 

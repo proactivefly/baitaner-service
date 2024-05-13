@@ -18,7 +18,6 @@ import (
 
 /**
 *使用 Index 是省略路径中的index
-*本路径为： /admin/user/login -省去了index
  */
 type Index struct{}
 

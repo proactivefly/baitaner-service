@@ -14,11 +14,11 @@ import (
 type Config struct {
 	DBconf DBconf `yaml:"dbconf"`
 	App    App    `yaml:"app"`
+	WXConf wxConf `yaml:"wxConf"`
 	Jwt    Jwt    `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
 	Log    Log    `mapstructure:"log" json:"log" yaml:"log"`
 }
 
-// 读取Yaml配置文件，并转换成Config对象  struct结构
 func (config *Config) InitializeConfig() *Config {
 	//获取项目的执行路径
 	path, err := os.Getwd()
