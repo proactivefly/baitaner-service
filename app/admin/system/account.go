@@ -21,11 +21,11 @@ func init() {
 	gf.Register(&fpath, reflect.TypeOf(fpath).PkgPath())
 }
 
-// 用于自动注册路由
+// Account 用于自动注册路由
 type Account struct {
 }
 
-// 获取成员列表
+// Get_list 获取成员列表
 func (api *Account) Get_list(c *gin.Context) {
 	getuser, _ := c.Get("user")
 	user := getuser.(*middleware.UserClaims)

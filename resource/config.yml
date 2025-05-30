@@ -24,7 +24,7 @@ app:
      #运行服务端口（根据您的实际情况修改）
      port: 8108
      #接口合法性验证
-     apisecret: gofly@888
+     apisecret: baitaner
      #接口JWT验证、跨域域名-不添加请求时报403 (开发、部署必改),部署域名时：“https://xxx.xxx.cn”替换成您的域名
      allowurl: http://localhost:9420,http://localhost:9421,https://xxx.xxx.cn,http://localhost:6020
      #token超时时间单位分钟 
@@ -40,13 +40,13 @@ app:
      # 配置根域名访问重定向路径,默认是业务端后台
      rootview: webadmin
      #不需要token-根模块
-     noVerifyTokenRoot: resource,webadmin,wxapp,baitaner,common
+     noVerifyTokenRoot: resource,webadmin,wxapp
      #不需要api接口合法性验证-根模块md5加密
-     noVerifyAPIRoot: resource,webadmin,baitaner,common
+     noVerifyAPIRoot: resource,webadmin
      #不需要验证token-具体请求路径
-     noVerifyToken: /common/uploadfile/get_image,/common/install/index,/common/install/save,/admin/user/login,/admin/user/logout,/admin/user/refreshtoken,/admin/user/get_code,/admin/user/resetPassword,/wxoffi/service/getPost_api,/wxapp/user/get_openid,/admin/user/get_logininfo,/baitaner/stall/get_list
+     noVerifyToken: /common/uploadfile/get_image,/common/install/index,/common/install/save,/admin/user/login,/admin/user/logout,/admin/user/refreshtoken,/admin/user/get_code,/admin/user/resetPassword,/wxoffi/service/getPost_api,/wxapp/user/get_openid,/admin/user/get_logininfo,/baitaner/user/login,/baitaner/user/getUserInfoByOpenid
      #不需要接口合法性-具体请求路径
-     noVerifyAPI: /wxoffi/service/getPost_api,/common/install/index,/common/install/save,'/common/upload/image'
+     noVerifyAPI: /wxoffi/service/getPost_api,/common/install/index,/common/install/save
 log:
      level: info  # 日志等级debug
      root_dir: ./runtime/logs # 日志根目录

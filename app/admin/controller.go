@@ -10,6 +10,7 @@ import (
 	_ "gofly/app/admin/common"
 
 	// _ "gofly/app/admin/dashboard"
+	_ "gofly/app/admin/beijingEntryPermit"
 	_ "gofly/app/admin/datacenter"
 	_ "gofly/app/admin/matter"
 	_ "gofly/app/admin/stall"
