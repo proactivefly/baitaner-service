@@ -14,7 +14,7 @@ import (
 type Config struct {
 	DBconf DBconf `yaml:"dbconf"`
 	App    App    `yaml:"app"`
-	WXConf wxConf `yaml:"wxConf"`
+	WXconf WXconf `yaml:"wxconf"`
 	Jwt    Jwt    `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
 	Log    Log    `mapstructure:"log" json:"log" yaml:"log"`
 }

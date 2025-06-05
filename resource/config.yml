@@ -57,7 +57,7 @@ log:
      max_size: 500 # 日志文件最大大小（MB）
      max_age: 28 # 旧文件的最大保留天数
      compress: true # 是否压缩
-wxConf:
+wxconf:
      appId: wx8726943051e0c2a0 # appid
      appSecret: 846293701b5f8a8e4d2c4432337
      authUrl: https://api.weixin.qq.com/sns/jscode2session # 微信登录接口

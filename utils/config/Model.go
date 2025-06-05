@@ -49,7 +49,7 @@ type Log struct {
 	MaxAge     int    `mapstructure:"max_age" json:"max_age" yaml:"max_age"`    // day
 	Compress   bool   `mapstructure:"compress" json:"compress" yaml:"compress"`
 }
-type wxConf struct {
+type WXconf struct {
 	AppID     string `yaml:"appid"`
 	AppSecret string `yaml:"appSecret"`
 	AuthURL   string `yaml:"authURL"`

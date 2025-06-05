@@ -32,7 +32,7 @@ func init() {
 func (api *Index) GetUserInfoByOpenid(c *gin.Context) {
 	code := c.DefaultQuery("code", "")
 	// 详情见文档 https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html
-	ref := gf.Get(fmt.Sprintf("https://api.weixin.qq.com/sns/jscode2session?appid=%v&secret=%v&js_code=%v&grant_type=authorization_code", global.App.Config.WXConf.AppID, global.App.Config.WXConf.AppSecret, code))
+	ref := gf.Get(fmt.Sprintf("https://api.weixin.qq.com/sns/jscode2session?appid=%v&secret=%v&js_code=%v&grant_type=authorization_code", global.App.Config.WXconf.AppID, global.App.Config.WXconf.AppSecret, code))
 	var parameter map[string]interface{}
 	if err := json.Unmarshal([]byte(ref), &parameter); err == nil {
 		rootUrl, _ := model.DB().Table("common_config").Where("keyname", "rooturl").Value("keyvalue")
